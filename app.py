@@ -12,10 +12,10 @@ def ipchecking():
         if ipcheck:
             hostname = x[4:]
             response = os.system("ping -c 1 " + hostname)
-            if response == 0:
-                print(hostname+" is up!")
-            else:
-                print (hostname+" is down!")
+            if response != 0:
+                print()
+                print("WARNING: "+hostname+" is down!")
+                print()
     sleeping = int(timer)
     time.sleep(sleeping)
 
